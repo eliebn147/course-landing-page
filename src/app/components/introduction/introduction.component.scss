@@ -1,0 +1,13 @@
+.introduction {
+  height: calc(50vh - 61.6px);
+  margin-top: 61.6px;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta {
+  margin-top: 16px;
+}
