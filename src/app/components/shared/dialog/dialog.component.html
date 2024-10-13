@@ -1,0 +1,10 @@
+<p-dialog [closable]="true" [draggable]="false" [modal]="true" [(visible)]="visible"
+          [style]="{ width: width() ? width() : '25vw' }" [header]="header()">
+  <ng-template pTemplate="body">
+    <ng-content></ng-content>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <app-button buttonText="Close" (click)="visible.set(false)" severity="secondary"></app-button>
+    <app-button [buttonText]="acceptButtonText()" (click)="acceptClicked.emit()" severity="primary" [disabled]="acceptButtonDisabled()"></app-button>
+  </ng-template>
+</p-dialog>

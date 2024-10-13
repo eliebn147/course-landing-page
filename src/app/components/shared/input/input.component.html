@@ -1,0 +1,80 @@
+<p-inputGroup
+>
+  @if (icon()) {
+    <button
+      type="button"
+      pButton
+      [icon]="icon()"
+      class="icon-container d-flex justify-content-end"
+      style="
+        width: 23px;
+        border-radius: 0px !important;
+        border-top-left-radius: 26px !important;
+        border-bottom-left-radius: 26px !important;
+        height: 30px;
+        border: 1px solid #ced4da;
+        border-right: none;
+      "
+      (click)="iconClicked()"
+    ></button>
+  }
+  <div class="flex flex-column" style="text-align: start">
+    <div class="description" style="font-size: 14px; padding-left: 4px">
+      {{ label() }}
+    @if(required()) {
+      <span style="color: red">*</span>
+    }
+    </div>
+    <input
+      pInputText
+      (blur)="onBlur.emit($event)"
+      (change)="onChange.emit($event)"
+      [disabled]="disabled()"
+      class="input-container"
+      [placeholder]="placeholder()"
+      (ngModelChange)="ngModelChange.emit($event)"
+      [(ngModel)]="value"
+      [type]="numbersOnly() ? 'number' : 'text'"
+      [ngClass]="{
+      'right-border-radius': (!clearIcon() || !value()) && !iconRight() && !loading(),
+      'border-right-0': (value() && clearIcon()) || iconRight() || loading(),
+      'left-border-radius': !icon(),
+      'border-left-0': icon(),
+      'border-right-radius-0': borderRadiusZero()
+    }"
+    />
+  </div>
+  @if (value() && clearIcon()) {
+    <div
+      class="icon-container right-icon-container"
+      (click)="clearClicked()"
+      [ngClass]="{
+      'right-border-radius': !iconRight() && !loading(),
+      'border-right-0': iconRight() || loading(),
+      'border-right-radius-0': borderRadiusZero()
+      }"
+    >
+      <i class="pi pi-times"></i>
+    </div>
+  }
+  @if (iconRight() && !loading()) {
+    <div
+      (click)="iconRightClicked()"
+      class="icon-container right-icon-container right-border-radius"
+      [ngStyle]="{'cursor': iconRight() == 'pi-external-link' ? 'pointer' : 'auto'}"
+      [ngClass]="{'border-right-radius-0': borderRadiusZero()}"
+    >
+      <i [class]="iconRight()"></i>
+    </div>
+  }
+  @if (loading()) {
+    <div
+      class="icon-container right-icon-container right-border-radius loading"
+      [ngClass]="{'border-right-radius-0': borderRadiusZero()}"
+      style="cursor: auto"
+    >
+      <i [class]="'pi pi-spinner'"></i>
+    </div>
+  }
+
+</p-inputGroup>

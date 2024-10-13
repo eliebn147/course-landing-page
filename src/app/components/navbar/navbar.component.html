@@ -1,0 +1,98 @@
+<div class="navbar">
+  <div class="container">
+    <div class="nav-left"></div>
+    <div class="nav-right">
+      <div
+        class="item"
+        [class.active]="selectedSection === 'introduction'"
+        (click)="selectSection('introduction')"
+      >
+        Introduction
+      </div>
+      <div
+        class="item"
+        [class.active]="selectedSection === 'aboutus'"
+        (click)="selectSection('aboutus')"
+      >
+        About Us
+      </div>
+      <div
+        class="item"
+        [class.active]="selectedSection === 'course'"
+        (click)="selectSection('course')"
+      >
+        Modules
+      </div>
+      <div
+        class="item"
+        [class.active]="selectedSection === 'meetus'"
+        (click)="selectSection('meetus')"
+      >
+        Meet Us
+      </div>
+      <div
+        class="item"
+        [class.active]="selectedSection === 'contactus'"
+        (click)="selectSection('contactus')"
+      >
+        Join Us
+      </div>
+      <div
+        class="item"
+        [class.active]="selectedSection === 'subscribe'"
+        (click)="selectSection('subscribe')"
+      >
+        Courses
+      </div>
+      <div class="hamburger" (click)="toggleMenu()">
+        <i class="pi pi-bars"></i>
+      </div>
+    </div>
+  </div>
+</div>
+@if (menuOpen) {
+  <div class="mobile-navigation" [@slideToggle]>
+    <div
+      class="item"
+      [class.active]="selectedSection === 'introduction'"
+      (click)="selectSection('introduction')"
+    >
+      Introduction
+    </div>
+    <div
+      class="item"
+      [class.active]="selectedSection === 'aboutus'"
+      (click)="selectSection('aboutus')"
+    >
+      About Us
+    </div>
+    <div
+      class="item"
+      [class.active]="selectedSection === 'course'"
+      (click)="selectSection('course')"
+    >
+      Modules
+    </div>
+    <div
+      class="item"
+      [class.active]="selectedSection === 'meetus'"
+      (click)="selectSection('meetus')"
+    >
+      Meet Us
+    </div>
+    <div
+      class="item"
+      [class.active]="selectedSection === 'contactus'"
+      (click)="selectSection('contactus')"
+    >
+      Join Us
+    </div>
+    <div
+      class="item"
+      [class.active]="selectedSection === 'subscribe'"
+      (click)="selectSection('subscribe')"
+    >
+      Courses
+    </div>
+  </div>
+}

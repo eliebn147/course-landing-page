@@ -1,0 +1,28 @@
+<div style="width: 100%; height: 100%; border-radius: 16px">
+  <vg-player (onPlayerReady)="onPlayerReady($event)" style="border-radius: 16px">
+    <vg-overlay-play></vg-overlay-play>
+    <vg-buffering vgFor="singlevideo"></vg-buffering>
+    <vg-scrub-bar>
+      <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+      <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+    </vg-scrub-bar>
+    <vg-controls>
+      <vg-play-pause vgFor="singleVideo"></vg-play-pause>
+      <vg-playback-button></vg-playback-button>
+      <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+      <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+      <vg-scrub-bar></vg-scrub-bar>
+      <vg-track-selector></vg-track-selector>
+      <vg-mute></vg-mute>
+      <vg-volume></vg-volume>
+      <vg-fullscreen vgFor="singleVideo"></vg-fullscreen>
+    </vg-controls>
+    <video [vgMedia]="$any(media)"
+           #media
+           type="video/mp4"
+           id="singleVideo"
+           preload="auto"
+           [src]="videoUrl()">
+    </video>
+  </vg-player>
+</div>

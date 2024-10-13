@@ -1,1 +1,176 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex";
+@import "primeflex/primeflex.css";
+@import "primeflex/primeflex.min.css";
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6d75e8;
+}
+
+::-webkit-scrollbar-button:single-button {
+  display: none
+}
+
+body {
+  margin: 0 !important;
+  padding: 0;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  margin: 0;
+  color: #797979
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+h4 {
+  margin: 0;
+}
+
+h5 {
+  margin: 0;
+}
+
+h6 {
+  margin: 0;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: rgba(black, 0.85);
+}
+
+.title-white {
+  color: white;
+}
+
+.title-primary {
+  color: var(--primary-color);
+}
+
+.description {
+  color: rgba(black, 0.7);
+  font-size: 16px;
+}
+
+.description-white {
+  color: white;
+}
+
+.description-primary {
+  color: var(--primary-color);
+}
+
+input {
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  background-color: white;
+  margin: 0em;
+  padding: 4px 12px;
+  border-width: 1px;
+  border-color: #dee2e6;
+  border-style: solid;
+  outline: none;
+  height: 30px;
+  color: rgba(black, 0.7);
+}
+
+textarea {
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  cursor: text;
+  overflow-wrap: break-word;
+  border-style: solid;
+  border-image: initial;
+  padding: 4px 12px;
+  white-space: pre-wrap;
+  outline: none;
+  box-shadow: none;
+  border-radius: 16px;
+  resize: none;
+  font-size: 14px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 740px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+    max-width: 980px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
